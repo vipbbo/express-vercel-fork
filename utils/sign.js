@@ -55,7 +55,7 @@ var sign = async function(url) {
     let jsapi_ticket = await getTicket();
     var obj = {
         jsapi_ticket: jsapi_ticket,
-        nonceStr: createNonceStrj(),
+        nonceStr: createNonceStr(),
         timestamp: createTimeStamp(),
         url
     }
