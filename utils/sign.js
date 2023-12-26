@@ -37,7 +37,7 @@ var row = function(obj) {
     keys = keys.sort(); // 字典排序
     var newObj = {};
     keys.forEach((key)=>{
-        console.log("---", key.toLowerCase())
+        console.log("---", key.toLowerCase(), obj[key])
         newObj[key.toLowerCase()] = obj[key]
     })
 

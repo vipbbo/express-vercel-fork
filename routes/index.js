@@ -25,6 +25,7 @@ router.get('/wx-auth', function(req, res, next) {
   }
 });
 
+// 生成签名
 router.get('/jsapi', async function(req, res){
   let url = decodeURIComponent(req.query.url);
   let conf = await sign(url);
