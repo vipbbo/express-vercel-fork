@@ -13,9 +13,9 @@ async function getTicket() {
     let token_data = await axios.get(tokenUrl);
     console.log('token_data', token_data);
 
-    let access_toekn = token_data.data.access_token; // 获取access_token
+    let access_token = token_data.data.access_token; // 获取access_token
     // 参考官方文档：https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62
-    let ticketUrl = `https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=${access_toekn}&type=jsapi`
+    let ticketUrl = `https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=${access_token}&type=jsapi`
     let ticket_data = await axios.get(ticketUrl); // 获取jsapi的ticket
     console.log('ticket_data', ticket_data);
     return ticket_data.data.ticket;
