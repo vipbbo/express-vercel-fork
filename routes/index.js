@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 // 通过命令 npm i sha1 安装 sha1
 var sha1 = require('sha1');
-
+var sign = require('../utils/sign')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -24,5 +24,12 @@ router.get('/wx-auth', function(req, res, next) {
     res.send('Error!!!!!!')
   }
 });
+
+router.get('/jsapi', async function(req, res){
+  let url = decodeURIComponent(req.query.url);
+  let conf = await sign(url);
+  console.log('conf', conf);
+  res.send(conf);
+})
 
 module.exports = router;
