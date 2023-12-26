@@ -3,6 +3,7 @@ var router = express.Router();
 // 通过命令 npm i sha1 安装 sha1
 var sha1 = require('sha1');
 var sign = require('../utils/sign')
+var test = require('../utils/test')
 
 var axios = require('axios')
 var {appid, secret} = require('../config')
@@ -34,6 +35,13 @@ router.get('/jsapi', async function(req, res){
   let conf = await sign(url);
   console.log('conf', conf);
   res.send(conf);
+})
+
+// 生成签名
+router.get('/test', async function(req, res){
+  let r = await test();
+  console.log('r', r);
+  res.send(r);
 })
 
 
