@@ -21,13 +21,22 @@ async function getTicket() {
     return ticket_data.data.ticket;
 }
 
+// 获取ticket方法函数
+async function getAccessToken() {
+    let tokenUrl = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=${secret}`
+    let token_data = await axios.get(tokenUrl);
+    console.log('token_data', token_data);
+
+    return JSON.stringify(token_data.data);
+}
+
 
 
 // 生成签名等数据信息的方法
 var test = async function() {
-    let jsapi_ticket = await getTicket();
+    let access_token = await getAccessToken();
 
-    return jsapi_ticket;
+    return access_token;
 }
 
 module.exports = test;
