@@ -9,7 +9,7 @@ var sha1 = require('sha1')
 
 // 获取ticket方法函数
 async function getTicket() {
-    let tokenUrl = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=$${secret}`
+    let tokenUrl = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=${secret}`
     let token_data = await axios.get(tokenUrl);
     console.log('token_data', token_data);
 
