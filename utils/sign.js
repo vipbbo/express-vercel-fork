@@ -37,7 +37,7 @@ var row = function(obj) {
     keys = keys.sort(); // 字典排序
     var newObj = {};
     keys.forEach((key)=>{
-        newObj[key] = obj[key]
+        newObj[key.toLowerCase] = obj[key]
     })
 
     var string = '';
@@ -68,6 +68,7 @@ var sign = async function(url) {
     // 4.对string1作sha1加密，字段名和字段值都采用原始值，不进行URL 转义。
     var signature = sha1(str);
     obj.signature = signature;
+    obj.appId = appid;
     return obj;
 }
 
