@@ -37,20 +37,4 @@ router.get('/jsapi', async function(req, res){
 })
 
 
-
-// 生成签名
-router.get('/ticket', async function(req, res){
-    let tokenUrl = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appid}&secret=$${secret}`
-    let token_data = await axios.get(tokenUrl);
-    console.log('token_data', token_data);
-
-    let access_token = token_data.data.access_token; // 获取access_token
-    // 参考官方文档：https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62
-    let ticketUrl = `https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=${access_token}&type=jsapi`
-    let ticket_data = await axios.get(ticketUrl); // 获取jsapi的ticket
-    console.log('ticket_data', ticket_data);
-})
-
-
-
 module.exports = router;
