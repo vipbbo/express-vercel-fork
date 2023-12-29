@@ -58,14 +58,17 @@ router.get('/redirect', async function(req, res){
 })
 
 /* */
-router.get('/user', function(req, res, next) {
-  console.log(req);
-  const code = req.query.code;
-  console.log(code);
-  // 通过code换取网页授权access_token
-  const userData = userAccessToken(code);
-  res.send(userData);
-  // res.render('index', { title: code });
+router.get('/user', async function(req, res, next) {
+  try {
+    const code = req.query.code;
+    console.log(code);
+    // 通过code换取网页授权access_token
+    const userData = await userAccessToken(code);
+    res.send(userData);
+  } catch (error) {
+    console.error('Error in /user route:', error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 
