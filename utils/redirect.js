@@ -8,5 +8,6 @@ var redirect = async function redirectToWeChat() {
     return url;
 }
 
+
 module.exports = redirect;
 

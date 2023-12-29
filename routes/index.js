@@ -4,6 +4,7 @@ var router = express.Router();
 var sha1 = require('sha1');
 var sign = require('../utils/sign')
 var redirect = require('../utils/redirect')
+var userAccessToken = require('../utils/userinfo')
 var test = require('../utils/test')
 
 var axios = require('axios')
@@ -12,7 +13,9 @@ var {appid, secret} = require('../config')
 router.get('/', function(req, res, next) {
   const code = req.query.code;
   console.log(code);
-  res.send(code);
+  // 通过code换取网页授权access_token
+  const userData = userAccessToken(code);
+  res.send(userData);
   // res.render('index', { title: code });
 });
 
