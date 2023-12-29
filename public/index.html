@@ -30,8 +30,12 @@
         },
         methods: {
             userInfo(){
-                let url = encodeURIComponent(location.href)
-                console.log(url);
+                // 获取未编码的当前页面 URL
+                const currentUrl = decodeURIComponent(location.href);
+
+                // 创建 URL 对象
+                const url = new URL(currentUrl);
+
                 // 获取 URL 中的参数值
                 const codeValue = url.searchParams.get('code');
                 // 使用 Axios 发送请求
