@@ -64,6 +64,7 @@ router.get('/user', async function(req, res, next) {
     console.log(code);
     // 通过code换取网页授权access_token
     const userData = await userAccessToken(code);
+    res.set('Content-Type', 'text/plain')
     res.send(userData);
   } catch (error) {
     console.error('Error in /user route:', error);
