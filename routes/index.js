@@ -11,7 +11,8 @@ var {appid, secret} = require('../config')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   const code = req.query.code;
-  res.render('index', { title: code });
+  res.send(code);
+  // res.render('index', { title: code });
 });
 
 
