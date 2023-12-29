@@ -12,7 +12,7 @@ var userAccessToken = async function userAccessToken(code) {
     // 拉取用户信息
     let user_info_url = `https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
     console.log("user_info_url",user_info_url);
-    return user_info_url;
+    return access_token_data;
 }
 
 
