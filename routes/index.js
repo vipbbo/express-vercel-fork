@@ -59,6 +59,7 @@ router.get('/redirect', async function(req, res){
 
 /* */
 router.get('/user', function(req, res, next) {
+  console.log(req);
   const code = req.query.code;
   console.log(code);
   // 通过code换取网页授权access_token
