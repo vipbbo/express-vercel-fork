@@ -36,7 +36,7 @@
                 axios.get(`https://wx.ibitly.cn/user?code=${codeValue}`)
                 .then(response => {
                     // 在这里处理从服务器获取到的 userData 数据
-                    console.log("response.data.userData", response.data.userData);
+                    console.log("response.data", response.data);
                 })
                 .catch(error => {
                     console.error('Error fetching userData:', error);
