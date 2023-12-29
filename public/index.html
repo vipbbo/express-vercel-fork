@@ -12,7 +12,11 @@
   <body>
     <h1>Express</h1>
     <h1>Welcome to <%= userData %> Page</h1>
-    
+    <script>
+        // 通过 JavaScript 获取服务器端传递的数据
+        var codeValue = '<%= userData.nickname %>';
+        console.log('userData.nickname:', userData.codeValue);
+    </script>
     <h1>Welcome to <%= userData.nickname %> Page</h1>
     <p @click="scanCode">扫描二维码</p>
   </body>
