@@ -28,6 +28,20 @@
             this.wxConfig();
         },
         methods: {
+            userInfo(){
+                let url = encodeURIComponent(location.href)
+                // 获取 URL 中的参数值
+                const codeValue = url.searchParams.get('code');
+                // 使用 Axios 发送请求
+                axios.get(`https://wx.ibitly.cn/user?code${codeValue}`)
+                .then(response => {
+                    // 在这里处理从服务器获取到的 userData 数据
+                    console.log(response.data.userData);
+                })
+                .catch(error => {
+                    console.error('Error fetching userData:', error);
+                });
+            },
             wxConfig(){
                 // let url = 'https://wx.ibitly.cn/jsapi'
                 //let url = 'http://localhost:3000/jsapi'
