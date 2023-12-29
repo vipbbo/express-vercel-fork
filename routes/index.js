@@ -49,7 +49,7 @@ router.get('/test', async function(req, res){
 router.get('/redirect', async function(req, res){
   let r = await redirect();
   console.log('r', r);
-  res.send(r);
+  res.redirect(r);
 })
 
 

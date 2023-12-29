@@ -4,8 +4,8 @@ var redirect = async function redirectToWeChat() {
     var redirectUri = encodeURIComponent('https://wx.ibitly.cn/');
     var url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_base&state=1#wechat_redirect`;
 
-    // 执行重定向
-    window.location.href = url;
+    // 执行重定向的地址
+    return url;
 }
 
 module.exports = redirect;
