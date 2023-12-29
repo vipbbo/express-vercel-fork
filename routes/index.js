@@ -15,8 +15,7 @@ router.get('/', function(req, res, next) {
   console.log(code);
   // 通过code换取网页授权access_token
   const userData = userAccessToken(code);
-  res.send(userData);
-  // res.render('index', { title: code });
+  res.render('index', { userData: userData });
 });
 
 
@@ -57,6 +56,16 @@ router.get('/redirect', async function(req, res){
   console.log('r', r);
   res.redirect(r);
 })
+
+/* */
+router.get('/user', function(req, res, next) {
+  const code = req.query.code;
+  console.log(code);
+  // 通过code换取网页授权access_token
+  const userData = userAccessToken(code);
+  res.send(userData);
+  // res.render('index', { title: code });
+});
 
 
 module.exports = router;
