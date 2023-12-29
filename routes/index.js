@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
   const code = req.query.code;
   console.log(code);
   // 通过code换取网页授权access_token
-  const userData = userAccessToken(code);
+  // const userData = userAccessToken(code);
   res.render('index', { userData: userData });
 });
 
