@@ -25,6 +25,7 @@
                 // let url = 'https://wx.ibitly.cn/jsapi'
                 //let url = 'http://localhost:3000/jsapi'
                 let url = encodeURIComponent(location.href.split('#')[0])
+                console.log(url);
                 axios
                 .get(`https://wx.ibitly.cn/jsapi?url=${url}`, {
                     url: encodeURIComponent(location.href.split("#")[0]),
