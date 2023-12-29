@@ -6,6 +6,7 @@ var userAccessToken = async function userAccessToken(code) {
     // 替换以下链接中的参数为实际值
     var access_token_url = `https://api.weixin.qq.com/sns/oauth2/access_token?appid=${appid}&secret=${secret}&code=${code}&grant_type=authorization_code`;
     let access_token_data = await axios.get(access_token_url);
+    console.log("access_token_data",access_token_data);
     let access_token = access_token_data.access_token;
     let openid = access_token_data.openid;
 
