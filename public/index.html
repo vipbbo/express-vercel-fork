@@ -38,7 +38,7 @@
                 const codeValue = url.searchParams.get('code');
                 console.log('codeValue', codeValue);
                 // 使用 Axios 发送请求
-                axios.get(`https://wx.ibitly.cn/user?code${codeValue}`)
+                axios.get(`https://wx.ibitly.cn/user?code=${codeValue}`)
                 .then(response => {
                     // 在这里处理从服务器获取到的 userData 数据
                     console.log(response.data.userData);
