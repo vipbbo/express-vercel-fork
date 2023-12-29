@@ -10,7 +10,8 @@ var axios = require('axios')
 var {appid, secret} = require('../config')
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  const code = req.query.code;
+  res.render('index', { title: code });
 });
 
 
