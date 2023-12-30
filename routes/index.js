@@ -4,7 +4,7 @@ var router = express.Router();
 var sha1 = require('sha1');
 var sign = require('../utils/sign')
 var redirect = require('../utils/redirect')
-var userAccessToken = require('../utils/userinfo')
+const { userAccessToken, userInfo } = require('../utils/userinfo')
 var test = require('../utils/test')
 
 var axios = require('axios')
@@ -57,7 +57,7 @@ router.get('/redirect', async function(req, res){
   res.redirect(r);
 })
 
-/* */
+/* 获取 access_token 和 openid */
 router.get('/user', async function(req, res, next) {
   try {
     const code = req.query.code;
@@ -71,6 +71,14 @@ router.get('/user', async function(req, res, next) {
     res.status(500).send('Internal Server Error');
   }
 });
+
+router.get('/user-info', async function(res) {
+  let access_token = res.query.access_token;
+  let openid = res.query.openid;
+  let res = userInfo(access_token, openid);
+  console.log('res',res);
+  return res;
+})
 
 
 module.exports = router;

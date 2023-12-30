@@ -21,10 +21,11 @@
         el: '#app',
         mounted() {
             this.wxConfig();
-            this.userInfo();
+            this.userAccessToeknAnfOpenId();
         },
         methods: {
-            userInfo(){
+            // 获取用户access_token，openid，
+            userAccessToeknAnfOpenId(){
                 // 获取未编码的当前页面 URL
                 const currentUrl = decodeURIComponent(location.href);
                 // 创建 URL 对象
@@ -37,10 +38,18 @@
                 .then(response => {
                     // 在这里处理从服务器获取到的 userData 数据
                     console.log("response.data", response.data);
+                    // 成功后根据access_token 和 openid获取用户信息
+                    this.userInfo(response.data.access_token, response.data.openid);
                 })
                 .catch(error => {
                     console.error('Error fetching userData:', error);
                 });
+            },
+            userInfo(access_token, openid) {
+                axios.get(`https://wx.ibitly.cn/user-info?access_token=${access_token}&openid=${openid}`)
+                .then(resp => {
+                    console.log('用户信息：', resp);
+                })
             },
             wxConfig(){
                 // let url = 'https://wx.ibitly.cn/jsapi'
