@@ -20,8 +20,10 @@
   <script>
       new Vue({
         el: '#app',
-        data: {
-          userInfoData: {}, // 定义一个用于存储用户信息的属性
+        data() {
+            return {
+                userInfoData: {}
+            };
         },
         mounted() {
             this.wxConfig();
