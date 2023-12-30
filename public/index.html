@@ -12,6 +12,7 @@
   <body>
     <h1>Express</h1>
     <h1>Welcome to Express</h1>
+    <h2>{{ userInfoData.nickname }}</h2>
 
     <p @click="scanCode">扫描二维码</p>
   </body>
@@ -19,6 +20,9 @@
   <script>
       new Vue({
         el: '#app',
+        data: {
+          userInfoData: {}, // 定义一个用于存储用户信息的属性
+        },
         mounted() {
             this.wxConfig();
             this.userAccessToeknAnfOpenId();
@@ -50,6 +54,8 @@
                 .then(resp => {
                     console.log('用户信息：', resp);
                     console.log('用户信息：', resp.data);
+                    // 将获取到的用户信息赋值给 userInfoData
+                    this.userInfoData = JSON.stringify(resp.data, null, 2);
                 })
             },
             wxConfig(){
