@@ -55,7 +55,9 @@
                     console.log('用户信息：', resp);
                     console.log('用户信息：', resp.data);
                     // 将获取到的用户信息赋值给 userInfoData
-                    this.userInfoData = JSON.stringify(resp.data, null, 2);
+                    // this.userInfoData = JSON.stringify(resp.data, null, 2);
+                    // 将获取到的用户信息直接赋值给 userInfoData
+                    this.userInfoData = resp.data;
                 })
             },
             wxConfig(){
