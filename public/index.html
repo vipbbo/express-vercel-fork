@@ -9,7 +9,7 @@
     <script src="https://cdn.bootcss.com/axios/0.19.2/axios.min.js"></script>
   </head>
 
-  <body id="app">
+  <body>
     <h1>Express</h1>
     <h1>Welcome to Express</h1>
     <h2>{{ userInfoData.nickname }}</h2>
@@ -60,6 +60,7 @@
                     // this.userInfoData = JSON.stringify(resp.data, null, 2);
                     // 将获取到的用户信息直接赋值给 userInfoData
                     this.userInfoData = resp.data;
+                    console.log('userInfoData:', this.userInfoData); // 添加这一行
                 })
             },
             wxConfig(){
