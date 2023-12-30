@@ -75,7 +75,7 @@ router.get('/user', async function(req, res, next) {
 router.get('/user-info', async function(req, res, next) {
   let access_token = req.query.access_token;
   let openid = req.query.openid;
-  let result = await userInfo(access_token, openid);
+  const result = await userInfo(access_token, openid);
   console.log('result',result);
   res.send(result);
 })
