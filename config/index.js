@@ -4,6 +4,7 @@ module.exports = {
 
     database: {
         host: '123.57.230.236',
+        port: 5306,
         user: 'root',
         password: 'mesh_pwd+-',
         database: 'mini_chat_db',
