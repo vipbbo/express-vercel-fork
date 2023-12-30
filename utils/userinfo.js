@@ -15,9 +15,12 @@ var userAccessToken = async function userAccessToken(code) {
     console.log("user_info_url",user_info_url);
     return access_token_data.data;
 }
-
+// 获取用户基本信息
 var userInfo = async function userInfo(access_token, openid) {
-    let user_info_url = `https://api.weixin.qq.com/cgi-bin/user/info?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
+    let user_info_url = `https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`
+
+
+    // let user_info_url = `https://api.weixin.qq.com/cgi-bin/user/info?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
     let result = axios.get(user_info_url);
     return result;
 }
