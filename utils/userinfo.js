@@ -18,8 +18,8 @@ var userAccessToken = async function userAccessToken(code) {
 
 var userInfo = async function userInfo(access_token, openid) {
     let user_info_url = `https://api.weixin.qq.com/cgi-bin/user/info?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
-    let res = axios.get(user_info_url);
-    return res;
+    let result = axios.get(user_info_url);
+    return result;
 }
 
 

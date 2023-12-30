@@ -75,9 +75,9 @@ router.get('/user', async function(req, res, next) {
 router.get('/user-info', async function(res) {
   let access_token = res.query.access_token;
   let openid = res.query.openid;
-  let res = userInfo(access_token, openid);
-  console.log('res',res);
-  return res;
+  let result = userInfo(access_token, openid);
+  console.log('result',result);
+  return result;
 })
 
 
