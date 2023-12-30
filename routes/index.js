@@ -72,12 +72,12 @@ router.get('/user', async function(req, res, next) {
   }
 });
 
-router.get('/user-info', async function(res) {
-  let access_token = res.query.access_token;
-  let openid = res.query.openid;
+router.get('/user-info', async function(req, res, next) {
+  let access_token = req.query.access_token;
+  let openid = req.query.openid;
   let result = userInfo(access_token, openid);
   console.log('result',result);
-  return result;
+  res.send(result);
 })
 
 
