@@ -65,6 +65,14 @@
                     // 将获取到的用户信息直接赋值给 userInfoData
                     this.userInfoData = resp.data;
                     console.log('userInfoData:', this.userInfoData); // 添加这一行
+                    // 查询数据库是否存在该用户数据，是否是VIP
+                    this.getUserByNickName(resp.data.nickname);
+                })
+            },
+            getUserByNickName(nickname) {
+                axios.get(`https://wx.ibitly.cn/users?nickname=${nickname}`)
+                .then(resp => {
+                    console.log("DB中的用户信息", resp);
                 })
             },
             wxConfig(){

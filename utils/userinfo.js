@@ -1,5 +1,9 @@
 var axios = require('axios')
 var {appid, secret} = require('../config')
+// ========== 数据模块
+const db = require('../db/mysql-util')
+// ========== 数据模块
+
 
 // 通过code换取网页授权access_token
 var userAccessToken = async function userAccessToken(code) {
