@@ -49,6 +49,7 @@
                 axios.get(`https://wx.ibitly.cn/user-info?access_token=${access_token}&openid=${openid}&lang=zh_CN`)
                 .then(resp => {
                     console.log('用户信息：', resp);
+                    console.log('用户信息：', resp.data);
                 })
             },
             wxConfig(){
