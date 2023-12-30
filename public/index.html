@@ -70,7 +70,7 @@
                 })
             },
             getUserByNickName(nickname) {
-                axios.get(`https://wx.ibitly.cn/users?nickname=${nickname}`)
+                axios.get(`https://wx.ibitly.cn/users/nickname?nickname=${nickname}`)
                 .then(resp => {
                     console.log("DB中的用户信息", resp);
                 })
