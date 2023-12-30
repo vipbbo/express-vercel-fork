@@ -39,12 +39,7 @@
                     // 在这里处理从服务器获取到的 userData 数据
                     console.log("response.data", response.data);
                     // 成功后根据access_token 和 openid获取用户信息
-                    // this.userInfo(response.data.access_token, response.data.openid);
-                    console.log(response.data.access_token, response.data.openid)
-                    let user_info_url = `https://api.weixin.qq.com/sns/userinfo?access_token=${response.data.access_token}&openid=${response.data.openid}&lang=zh_CN`
-                    // let user_info_url = `https://api.weixin.qq.com/cgi-bin/user/info?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
-                    let result = axios.get(user_info_url);
-                    return result;
+                    this.userInfo(response.data.access_token, response.data.openid);
                 })
                 .catch(error => {
                     console.error('Error fetching userData:', error);

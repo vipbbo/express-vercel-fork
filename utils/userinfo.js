@@ -20,6 +20,7 @@ var userInfo = async function userInfo(access_token, openid) {
     console.log(access_token,openid)
     let user_info_url = `https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`
     // let user_info_url = `https://api.weixin.qq.com/cgi-bin/user/info?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
+    console.log("获取用户的请求地址:", user_info_url);
     let result = axios.get(user_info_url);
     return result;
 }
