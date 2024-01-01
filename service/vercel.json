@@ -1,10 +1,4 @@
 {
-    "builds": [{ "src": "dist/app.ts", "use": "@now/node" }],
-    "routes": [{ "src": "(.*)", "dest": "dist/app.ts" }],
-    "functions": {
-        "api": {
-          "src": "dist/api",
-          "output": "api"
-        }
-    }
+    "builds": [{ "src": "app.ts", "use": "@now/node" }],
+    "routes": [{ "src": "(.*)", "dest": "dist/app.ts" }]
 }
