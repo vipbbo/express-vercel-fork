@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NAvatar, NButton, NCard, NIcon, NLayout, NLayoutContent, NLayoutHeader, NSpace, NImage } from 'naive-ui'
+import { NAvatar, NButton, NCard, NIcon, NLayout, NLayoutContent, NLayoutHeader, NSpace} from 'naive-ui'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 
@@ -12,9 +12,9 @@ const handleShareClick = () => {
 const handlePayClick = () => {
 	router.push({ name: 'Pay' });
 }
-const handleClick = () => {
-	iconColor.value = iconColor.value === 'black' ? 'gold' : 'black'
-}
+// const handleClick = () => {
+// 	iconColor.value = iconColor.value === 'black' ? 'gold' : 'black'
+// }
 </script>
 
 <template>

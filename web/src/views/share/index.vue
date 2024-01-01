@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import { useRouter } from 'vue-router';
-import { NAvatar, NButton, NCard, NIcon, NLayout, NLayoutContent, NLayoutHeader, NSpace } from 'naive-ui'
+import { NCard, NIcon, NLayout, NLayoutContent, NLayoutHeader, NSpace } from 'naive-ui'
 import {computed} from "vue";
 import {useBasicLayout} from "@/hooks/useBasicLayout";
 

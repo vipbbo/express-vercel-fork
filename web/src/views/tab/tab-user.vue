@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { NAvatar, NButton, NCard, NIcon, NLayout, NLayoutContent, NLayoutHeader, NSpace, NImage } from 'naive-ui'
-import { ref } from 'vue'
+import { NLayoutContent } from 'naive-ui'
+// import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 import User from '@/views/user/index.vue'
 
-const iconColor = ref('black')
+// const iconColor = ref('black')
 const router = useRouter();
 
 const handleTabSwitch = (tab: string) => {
@@ -12,15 +12,15 @@ const handleTabSwitch = (tab: string) => {
 	router.push({ name: tab });
 }
 
-const handleShareClick = () => {
-	router.push({ name: 'Share' });
-}
-const handlePayClick = () => {
-	router.push({ name: 'Pay' });
-}
-const handleClick = () => {
-	iconColor.value = iconColor.value === 'black' ? 'gold' : 'black'
-}
+// const handleShareClick = () => {
+// 	router.push({ name: 'Share' });
+// }
+// const handlePayClick = () => {
+// 	router.push({ name: 'Pay' });
+// }
+// const handleClick = () => {
+// 	iconColor.value = iconColor.value === 'black' ? 'gold' : 'black'
+// }
 </script>
 
 <template>

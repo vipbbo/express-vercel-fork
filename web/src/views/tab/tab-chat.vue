@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { NLayoutContent, NIcon } from 'naive-ui'
-import { useRoute, useRouter } from 'vue-router'
+import { NLayoutContent} from 'naive-ui'
+import { useRouter } from 'vue-router'
 import Chat from '@/views/chat/index.vue';
 
 const router = useRouter()
