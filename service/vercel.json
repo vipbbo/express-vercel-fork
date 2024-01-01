@@ -2,6 +2,6 @@
     "builds": [{ "src": "dist/app.ts", "use": "@now/node" }],
     "routes": [{ "src": "(.*)", "dest": "dist/app.ts" }],
     "functions": {
-        "root": "dist"
+        "src": "dist"
       }
 }
