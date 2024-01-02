@@ -1,4 +1,7 @@
 {
     "builds": [{ "src": "src/app.ts", "use": "@now/node" }],
-    "routes": [{ "src": "(.*)", "dest": "app.js" }]
-}
+    "routes": [
+      { "src": "/(.*)", "dest": "src/app.ts" }
+    ]
+  }
+  
