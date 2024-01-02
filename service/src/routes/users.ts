@@ -14,16 +14,16 @@ router.get('/', async function(req, res, next) {
     // 1. 获取当前页面 URL中的code
     const code: string = req.query.code as string;
     // 2. 通过code换取网页授权access_token 和 openid  userAccessToken
-    const result = await userAccessToken(code);
+    const result = await userAccessTokenByCode(code);
     const access_token = result.data.access_token;
     const openid = result.data.openid
     // 3. 根据access_token 和 openid获取用户信息
-    const userInfo = userInfoByAccessTokenAndOpenId(access_token, openid);
-    console.log("userInfo:", userInfo);
-    res.send(userInfo);
+    const userInfoData = await userInfoByAccessTokenAndOpenId(access_token, openid);
+    console.log("userInfo:", userInfoData.data);
+    res.send(userInfoData.data);
 });
 // 通过code换取网页授权access_token
-async function userAccessToken(code: string) {
+async function userAccessTokenByCode(code: string) {
     try {
       // 替换以下链接中的参数为实际值
       var access_token_url = `https://api.weixin.qq.com/sns/oauth2/access_token?appid=${appid}&secret=${secret}&code=${code}&grant_type=authorization_code`;
@@ -51,12 +51,12 @@ async function userAccessToken(code: string) {
 
 // 用户信息
 async function userInfoByAccessTokenAndOpenId(access_token:string, openid:string) {
-    axios.get(`https://wx.ibitly.cn/user-info?access_token=${access_token}&openid=${openid}&lang=zh_CN`)
-    .then(resp => {
-        console.log('用户信息：', resp);
-        // 将获取到的用户信息直接赋值给 userInfoData
-        return resp.data;
-    })
+  console.log(access_token,openid)
+  let user_info_url = `https://api.weixin.qq.com/sns/userinfo?access_token=${access_token}&openid=${openid}&lang=zh_CN`
+  // let user_info_url = `https://api.weixin.qq.com/cgi-bin/user/info?access_token=${access_token}&openid=${openid}&lang=zh_CN`;
+  console.log("获取用户的请求地址:", user_info_url);
+  let result = axios.get(user_info_url);
+  return result;
 };
 
 
