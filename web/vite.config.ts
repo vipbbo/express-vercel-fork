@@ -23,7 +23,8 @@ function setupPlugins(env: ImportMetaEnv): PluginOption[] {
 
 export default defineConfig((env) => {
   const viteEnv = loadEnv(env.mode, process.cwd()) as unknown as ImportMetaEnv
-
+  // 输出 viteEnv 的内容
+  console.log('viteEnv:', viteEnv);
   return {
     resolve: {
       alias: {
