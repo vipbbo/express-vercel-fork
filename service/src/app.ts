@@ -7,7 +7,7 @@ import usersRouter from './routes/users';
 const app = express();
 const router = express.Router()
 
-const port = 1003;
+const port = 3002;
 
 // app.use('/', indexRouter);
 app.use('/users', usersRouter);
