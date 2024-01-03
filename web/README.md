@@ -5,6 +5,7 @@
 
 更多功能：[chatgpt-web-plus](https://github.com/Chanzhaoyu/chatgpt-web-plus)
 
+
 ![cover](./docs/c1.png)
 ![cover2](./docs/c2.png)
 
