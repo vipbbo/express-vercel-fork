@@ -2,6 +2,7 @@ import type { App } from 'vue'
 import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 // import { setupPageGuard } from './permission'
+import { setupWxUserInfo } from './wx-user'
 import { ChatLayout } from '@/views/chat/layout'
 
 const routes: RouteRecordRaw[] = [
@@ -34,6 +35,10 @@ const routes: RouteRecordRaw[] = [
 				path: '/user',
 				name: 'User', // 给路由起一个名字
 				component: () => import('@/views/tab/tab-user.vue'),
+				// beforeEnter: (to, from, next) => {
+				// 	setupWxUserInfo(router)
+				// 	next()
+				// }
 			},
 		],
 	},
@@ -43,11 +48,11 @@ const routes: RouteRecordRaw[] = [
 		name: 'Share', // 给路由起一个名字
 		component: () => import('@/views/share/index.vue'),
 	},
-	{
-		path: '/user',
-		name: 'User', // 给路由起一个名字
-		component: () => import('@/views/tab/tab-user.vue'),
-	},
+	// {
+	// 	path: '/user',
+	// 	name: 'User', // 给路由起一个名字
+	// 	component: () => import('@/views/tab/tab-user.vue'),
+	// },
 	{
 		path: '/pay/index',
 		name: 'Pay', // 给路由起一个名字
@@ -81,6 +86,8 @@ export const router = createRouter({
 })
 
 // setupPageGuard(router)
+// 获取微信的个人信息接口
+setupWxUserInfo(router)
 
 export async function setupRouter(app: App) {
   app.use(router)

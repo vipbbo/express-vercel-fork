@@ -31,7 +31,7 @@ const handleTabSwitch = (tab: string) => {
 						<div
 							class="flex items-center cursor-pointer"
 							:class="{ 'text-green-600': $route.name === 'Chat' }"
-							@click="handleTabSwitch('chat')"
+							@click="handleTabSwitch('Chat')"
 						>
 <!--							<n-icon>-->
 <!--								<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">-->
