@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+      "lib": ["DOM", "ESNext"],
       "esModuleInterop": true,
       "target": "es5",
       "module": "commonjs",
