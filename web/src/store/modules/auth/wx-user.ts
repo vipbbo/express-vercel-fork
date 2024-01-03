@@ -8,7 +8,9 @@ import { fetchWxUser } from '@/api/wx-index'
 // 会话响应的结构
 interface WechatResponse {
     wx_token: string
-    user_info: {}
+    user_info: {
+        nickname: string;
+    }
 }
 
 export interface WxAuthState {
