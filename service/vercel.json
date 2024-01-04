@@ -4,7 +4,8 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "build/app.mjs"
+      "dest": "build/app.mjs",
+      "contentType": "application/javascript"
     }
   ],
   "env": {
