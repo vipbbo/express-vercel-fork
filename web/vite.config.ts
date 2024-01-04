@@ -40,6 +40,7 @@ export default defineConfig((env) => {
         '/api': {
           target: viteEnv.VITE_APP_API_BASE_URL,
           changeOrigin: true, // 允许跨域
+          secure: false, // 禁用证书验证
           rewrite: path => path.replace('/api/', '/'),
         },
       },
