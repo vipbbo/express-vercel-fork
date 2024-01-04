@@ -3,7 +3,7 @@
   "builds": [
     {
       "src": "tsup.config.ts",
-      "use": "@now/node"
+      "use": "@vercel/node"
     }
   ],
   "routes": [
