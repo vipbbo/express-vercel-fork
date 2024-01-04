@@ -1,18 +1,27 @@
 {
-    "compilerOptions": {
-      "lib": ["DOM", "ESNext"],
-      "esModuleInterop": true,
-      "target": "es5",
-      "module": "commonjs",
-      "outDir": "./dist",
-      "rootDir": "./src",
-      "strict": true
-    },
-    "include": [
-      "src/**/*.ts"
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": [
+      "esnext"
     ],
-    "exclude": [
-      "node_modules"
-    ]
-  }
-  
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "outDir": "build",
+    "noEmit": true
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "include": [
+    "**/*.ts"
+  ]
+}
