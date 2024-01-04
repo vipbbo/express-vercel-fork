@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 // 通过命令 npm i sha1 安装 sha1
-var sha1 = require('sha1');
+import sha1 from 'sha1';
+
 import axios from 'axios';
 import config from '../config/index';
 import { sendResponse } from '../utils'
