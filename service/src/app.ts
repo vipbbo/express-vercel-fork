@@ -1,7 +1,6 @@
 // src/app.ts
 import express, { Request, Response } from 'express';
 import { isNotEmptyString } from './utils/is'
-import cors from 'cors';
 import usersRouter from './routes/users';
 
 
@@ -12,13 +11,6 @@ const port = 3002;
 
 // app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// 使用 CORS 中间件
-app.use(cors({
-  origin: 'https://web.ibitly.cn',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
-  optionsSuccessStatus: 204, // 针对预检请求的响应状态码
-}));
 
 
 app.get('/', (req: Request, res: Response) => {
