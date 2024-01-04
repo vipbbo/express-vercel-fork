@@ -1,8 +1,8 @@
-import { get } from '@/utils/request'
+import { post } from '@/utils/request'
 
 export function fetchWxUser<T>() {
   console.log("============H5调用微信获取个人信息接口================")
-  return get<T>({
+  return post<T>({
     url: 'users/wx-user',
   })
 }

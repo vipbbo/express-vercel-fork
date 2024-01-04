@@ -9,7 +9,7 @@ const router = express.Router();
 const { appid, secret } = config;
 
 
-router.get('/wx-user', async function (req, res, next) {
+router.post('/wx-user', async function (req, res, next) {
   console.log("============H5个人信息接口================")
   res.send({ status: 'Success', message: '', data: { wx_token: "token_paidaxing", user_info: {nickname: "paidaxing"} } })
 });
