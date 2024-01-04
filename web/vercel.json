@@ -1,0 +1,11 @@
+{
+    "routes": [
+      {
+        
+        "src": "^/api/(.*)",
+        "dest": "https://service.ibitly.cn/$1",
+        "status": 200
+      }
+    ]
+  }
+  
