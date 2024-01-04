@@ -1,18 +1,22 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "src/app.ts",
-      "use": "@vercel/node",
-      "config": { "prod": true } 
+      "src": "tsup.config.ts",
+      "use": "@now/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/app.ts"
+      "dest": "build/app.mjs"
     }
   ],
   "env": {
-    "NODE_ENV": "prod"
+    "NODE_ENV": "production"
+  },
+  "framework": {
+    "name": "express",
+    "version": "auto"
   }
 }
