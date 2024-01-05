@@ -4,5 +4,6 @@
       "src": "/(.*)",
       "dest": "build/app.mjs"
     }
-  ]
+  ],
+  "output": "build"
 }
