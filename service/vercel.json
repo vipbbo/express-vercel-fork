@@ -8,10 +8,6 @@
     {
       "src": "tsupconfig.ts",
       "use": "@vercel/node"
-    },
-    {
-      "src": "src/**/*.ts",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
