@@ -1,10 +1,8 @@
 {
-  "builds": [
-    {
-      "src": "tsup.config.ts",
-      "use": "@vercel/node"
-    }
-  ],
+  "installCommand": "pnpm install",
+  "outputDirectory": "build",
+  "buildCommand": "pnpm clean && tsup",
+  "devCommand": "node ./build/app.mjs",
   "routes": [
     {
       "src": "/(.*)",
