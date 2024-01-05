@@ -1,18 +1,14 @@
 {
-  "version": 2,
   "builds": [
-    { "src": "package.json", "use": "@vercel/node" },
-    { "src": "tsconfig.json", "use": "@vercel/node" },
     { "src": "tsupconfig.ts", "use": "@vercel/node" },
-    { "src": "src/**/*.ts", "use": "@vercel/node" }
+    { "src": "src/**/*.ts", "use": "@vercel/node" },
+    { "src": "package.json", "use": "@vercel/node" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "build/app.mjs"
-    }
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "build/app.mjs" }
   ],
   "env": {
-    "NODE_ENV": "prod"
+    "NODE_ENV": "production"
   }
 }
