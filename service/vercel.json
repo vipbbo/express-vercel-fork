@@ -1,22 +1,39 @@
 {
-  "version": 2,
   "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/node"
-    },
     {
       "src": "tsupconfig.ts",
       "use": "@vercel/node"
+    },
+    {
+      "src": "src/**/*.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": { "maxLambdaSize": "30mb" }
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "build/app.mjs"
-    }
+      "src": "/.*",
+      "dest": "build/app.mjs",
+      "headers": { "x-vercel-command": "prod" }
+    },
+    { "handle": "filesystem" }
   ],
   "env": {
-    "NODE_ENV": "prod"
+    "NODE_ENV": "production"
+  },
+  "functions": {
+    "prod": {
+      "runtime": "@vercel/node@16",
+      "memory": 1024,
+      "maxDuration": 30,
+      "clean": true,
+      "includeFiles": ["build/**/*"],
+      "entry": "build/app.mjs",
+      "command": "node ./build/app.mjs"
+    }
   }
 }
