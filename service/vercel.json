@@ -1,14 +1,22 @@
 {
+  "version": 2,
   "builds": [
-    { "src": "tsupconfig.ts", "use": "@vercel/node" },
-    { "src": "src/**/*.ts", "use": "@vercel/node" },
-    { "src": "package.json", "use": "@vercel/node" }
+    {
+      "src": "tsconfig.json",
+      "use": "@vercel/node"
+    }
   ],
+  "build": {
+    "command": "pnpm clean && tsup",
+    "synchronousHooks": false
+  },
   "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "build/app.mjs" }
+    {
+      "src": "/(.*)",
+      "dest": "build/app.mjs"
+    }
   ],
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "prod"
   }
 }
