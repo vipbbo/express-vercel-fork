@@ -14,10 +14,6 @@
       "use": "@vercel/node"
     }
   ],
-  "build": {
-    "command": "pnpm clean && tsup",
-    "synchronousHooks": false
-  },
   "routes": [
     {
       "src": "/(.*)",
