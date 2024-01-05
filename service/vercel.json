@@ -30,10 +30,8 @@
       "runtime": "@vercel/node@16",
       "memory": 1024,
       "maxDuration": 30,
-      "clean": true,
       "includeFiles": ["build/**/*"],
-      "entry": "build/app.mjs",
-      "command": "node ./build/app.mjs"
+      "entry": "build/app.mjs"
     }
   }
 }
