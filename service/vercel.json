@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "tsup.config.ts",
+      "src": "src",
       "use": "@vercel/node"
     }
   ]
