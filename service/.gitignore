@@ -28,5 +28,3 @@ coverage
 *.sln
 *.sw?
 
-build
-.vercel
