@@ -2,7 +2,7 @@
   "builds": [
     {
       "src": "tsup.config.ts",
-      "use": "@vercel/node"
+      "use": "tsup"
     }
   ]
 }
