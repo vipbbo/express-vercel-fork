@@ -1,9 +1,14 @@
 {
+  "builds": [
+    {
+      "src": "tsup.config.ts",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "build/app.mjs"
     }
-  ],
-  "output": "build"
+  ]
 }
