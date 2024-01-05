@@ -1,6 +1,14 @@
 {
   "routes": [
     {
+      "src": "/app.mjs",
+      "dest": "/build/app.mjs"
+    },
+    {
+      "src": "/app.mjs.map",
+      "dest": "/build/app.mjs.map"
+    },
+    {
       "src": "/(.*)",
       "dest": "build/app.mjs"
     }
