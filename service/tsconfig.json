@@ -15,7 +15,9 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "outDir": "build",
-    "noEmit": true
+    // 由于 "noEmit": true 的设置，实际上并不会输出文件
+    // "noEmit": true
+    "noEmit": false
   },
   "exclude": [
     "node_modules",

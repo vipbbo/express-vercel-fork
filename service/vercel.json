@@ -2,8 +2,7 @@
   "builds": [
     {
       "src": "build/app.mjs",
-      "use": "@vercel/node",
-      "config": { "buildCommand": "pnpm clean && tsup" }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
